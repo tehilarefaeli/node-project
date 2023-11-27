@@ -83,6 +83,8 @@ async function init() {
     item = mongoose.model('item', items);
     await item.deleteMany({})
 
+    branch = mongoose.model('branch', branches);
+
     if ((await getbranches()).length == 0) {
         const branc1 = new branch({ id: '1', city: 'bnei brak', street: 'Ezra 12', phone: '035797654', opening_hours: '10:00-21:00', email: 'shopbb@shop.com' });
         const branc2 = new branch({ id: '2', city: 'jerusalem', street: 'Neria 35', phone: '025797653', opening_hours: '10:00-21:00', email: 'shopjr@shop.com' });

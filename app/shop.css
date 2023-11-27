@@ -1,0 +1,99 @@
+.body{
+    background-color:beige;
+}
+.card {
+    width: 18rem;
+    display: inline-block;
+}
+
+.name-product {
+    font-size: larger;
+}
+
+#divsOfProducts {
+    /* background-color: aqua; */
+    width: calc(18rem*3.5);
+    height: fit-content;
+    margin-left: 15%;
+    flex-grow: 8;
+}
+
+.container_menu {
+    display: flex;
+    padding: 10px;
+    size: 70px;
+
+}
+.shop-name {
+    text-align: center;
+    color:aquamarine;
+    text-shadow: 2px 2px grey;
+    transition: 0.3s;
+    background-color: bisque;
+}
+
+
+nav a {
+    color: aqua;
+    padding: 0 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+}
+.admin_p{
+   margin-right: 0px;
+    padding: 5px;
+    text-decoration: none;
+    text-align:left;
+    border-radius: 10px;
+
+}
+.input_desplay{
+    margin: 5px;
+    border-radius: 7px;
+
+}
+
+nav a:hover {
+    color: chocolate;
+}
+
+.branches_div{
+    display: flex;
+}
+
+.branches_div_children{
+    flex-grow: 4;
+}
+.footer{
+    background-color: aquamarine;
+}
+
+#droductdiv{
+    display: flex;
+    flex-direction: row;
+}
+#avg{
+    flex-grow: 2;
+    margin: 60px;
+}
+
+.addLink{
+    border: 4px solid aquamarine;
+    text-decoration: none;
+    color: black;
+}
+
+#links{
+    height: 85px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+h1{
+     color: aqua;
+     text-align: center;
+    }  
+

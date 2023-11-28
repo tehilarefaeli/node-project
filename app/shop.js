@@ -63,7 +63,7 @@
 //                 updateBranch(branch);
 //             }, false);
 //             html.appendChild(data)
-     
+
 //         document.getElementById("branches").appendChild(html);
 
 //     }
@@ -203,7 +203,7 @@ function displayBranches() {
             })
             console.log('filterproductbt3parameters', filterproductbt3parametersbra)
             loadBranches()
-           
+
 
         };
         inputBra.appendChild(button);
@@ -267,17 +267,17 @@ function loadBranches() {
     for (i = 0; i < databra?.length; i++) {
         const html = document.createElement("div")
         html.classList.add("branches_div");
-            const data = document.createElement("div");
-            data.classList.add("branches_div_children");
-            data.innerHTML = "</br>" + databra[i].city + '|' + databra[i].street + "</br>" + databra[i].phone + "|" + databra[i].opening_hours + "</br>" + databra[i].email + "</br>";
-            let updateButton = document.createElement("button");
-            updateButton.innerHTML = "Update";
-            data.appendChild(updateButton);
-            updateButton.addEventListener('click', function () {
-                updateBranch(branch);
-            }, false);
-            html.appendChild(data)
-     
+        const data = document.createElement("div");
+        data.classList.add("branches_div_children");
+        data.innerHTML = "</br>" + databra[i].city + '|' + databra[i].street + "</br>" + databra[i].phone + "|" + databra[i].opening_hours + "</br>" + databra[i].email + "</br>";
+        let updateButton = document.createElement("button");
+        updateButton.innerHTML = "Update";
+        data.appendChild(updateButton);
+        updateButton.addEventListener('click', function () {
+            updateBranch(branch);
+        }, false);
+        html.appendChild(data)
+
         document.getElementById("branches").appendChild(html);
 
     }
@@ -294,15 +294,15 @@ function get_branches() {
             let updateButton = document.createElement("button");
             updateButton.innerHTML = "Update";
             data.appendChild(updateButton);
-            updateButton.addEventListener('click',function(){
-                     updateBranch(branch);
-                 }, false);
-         let deleteButton = document.createElement("button");
-         deleteButton.innerHTML="Delete";
-         data.appendChild(deleteButton);
-         deleteButton.addEventListener('click',function(){
-                  deleteBranch(branch);
-              }, false);
+            updateButton.addEventListener('click', function () {
+                updateBranch(branch);
+            }, false);
+            let deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            data.appendChild(deleteButton);
+            deleteButton.addEventListener('click', function () {
+                deleteBranch(branch);
+            }, false);
             html.appendChild(data)
         })
         document.getElementById("branches")?.appendChild(html);
@@ -331,27 +331,27 @@ function get_avarage() {
     //     document.getElementById("avg").appendChild(html1);
 
     // });
-} 
+}
 
-function deleteBranch(event){
+function deleteBranch(event) {
     fetch("/deletebranch", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({id:event._id, city: event.city, street: event.street, phone: event.phone, opening_hours: event.opening_hours, email: event.email })
+        body: JSON.stringify({ id: event._id, city: event.city, street: event.street, phone: event.phone, opening_hours: event.opening_hours, email: event.email })
     }).then(console.log)
     window.location.href = './shop.html';
     return false
 }
 
-function deleteJewerly(event){
+function deleteJewerly(event) {
     fetch("/deletejewerly", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({id:event._id, name: event.name, cost: event.cost, img: event.img, category: event.category, color: event.color, branch:event.branch } )
+        body: JSON.stringify({ id: event._id, name: event.name, cost: event.cost, img: event.img, category: event.category, color: event.color, branch: event.branch })
     }).then(console.log)
     window.location.href = './shop.html';
     return false
@@ -361,15 +361,15 @@ function updateBranch(event) {
     window.location.href = './updateBranch.html';
 }
 
-function updateJewelry(event) {
-    window.localStorage.setItem('jewelry', JSON.stringify(event));
-    window.location.href = './updateJewelry.html';
+function updateproduct(event) {
+    window.localStorage.setItem('product', JSON.stringify(event));
+    window.location.href = './updateproduct.html';
 }
 
-async function get_Jewelry() {
-    fetch("/jewelry").then(res => res.json()).then(items => {
+async function get_product() {
+    fetch("/product").then(res => res.json()).then(items => {
         productdata = items
-        console.log('rfghjaaaaaaaaaaaaa',productdata)
+        console.log('rfghjaaaaaaaaaaaaa', productdata)
         items.forEach(item => {
             const card = document.createElement("div");
             card.classList.add("card");
@@ -394,14 +394,14 @@ async function get_Jewelry() {
             updateButton.innerHTML = "Update";
             card.appendChild(updateButton);
             updateButton.addEventListener('click', function () {
-                updateJewelry(item);
+                updateproduct(item);
             }, false);
             let deleteButton = document.createElement("button");
-         deleteButton.innerHTML="Delete";
-         card.appendChild(deleteButton);
-         deleteButton.addEventListener('click',function(){
-                  deleteJewerly(item);
-              }, false);
+            deleteButton.innerHTML = "Delete";
+            card.appendChild(deleteButton);
+            deleteButton.addEventListener('click', function () {
+                deleteJewerly(item);
+            }, false);
             document.getElementById("divsOfProducts").appendChild(card);
         })
     })
@@ -409,26 +409,26 @@ async function get_Jewelry() {
 }
 
 
-get_Jewelry();
+get_product();
 get_branches();
 
 async function verify_DB() {
     const admin_email = document.querySelector('#adminUser').value;
     const admin_password = document.querySelector('#adminPass').value;
-  
+
     const response = await fetch("/checkemail", {
         method: "get",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ admin_email: admin_email, admin_password: admin_password})
+        body: JSON.stringify({ admin_email: admin_email, admin_password: admin_password })
     }).then(console.log)
     const data = await response.json();
-    
+
     if (data.exists) {
-      window.location.href = '/shop.html';
+        window.location.href = '/shop.html';
     } else {
-      alert('I don\'t recognize you :(');
+        alert('I don\'t recognize you :(');
     }
     return false;
 }

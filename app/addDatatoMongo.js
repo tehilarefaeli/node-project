@@ -92,10 +92,10 @@ async function init() {
         branc2.save()
     }
 
-    const kippah1 = new item({ name: 'Elegant Kippah', cost: '27', img:'https://haine.co.il/wp-content/uploads/2021/01/IMG_7021-2-scaled-scaled.jpg', category: 'Kippahs', color: 'silver', branch: ['1', '2'] });
+    const kippah1 = new item({ name: 'Elegant Kippah', cost: '27', img: 'https://haine.co.il/wp-content/uploads/2021/01/IMG_7021-2-scaled-scaled.jpg', category: 'Kippahs', color: 'silver', branch: ['1', '2'] });
     const kippah2 = new item({ name: 'Car Kippah', cost: '22', img: 'https://haine.co.il/wp-content/uploads/2022/08/PHOTO-2022-07-31-14-51-39-3.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
-    const kippah3 = new item({ name: 'Leather Kippah', cost: '28', img:'https://haine.co.il/wp-content/uploads/2021/08/a115.png', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
-    const kippah4 = new item({ name: 'Lego Kippah', cost: '35', img:'https://haine.co.il/wp-content/uploads/2022/07/20220727_122356-scaled.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah3 = new item({ name: 'Leather Kippah', cost: '28', img: 'https://haine.co.il/wp-content/uploads/2021/08/a115.png', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah4 = new item({ name: 'Lego Kippah', cost: '35', img: 'https://haine.co.il/wp-content/uploads/2022/07/20220727_122356-scaled.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
     const kippah5 = new item({ name: 'Bicycle Kippah', cost: '40', img: 'https://haine.co.il/wp-content/uploads/2023/03/IMG-20230312-WA0051.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
     kippah1.save()
     kippah2.save()
@@ -106,7 +106,7 @@ async function init() {
 
 
 
-    const headkerchief1 = new item({ name: 'Pink headkerchief', cost: '25', img:'https://haine.co.il/wp-content/uploads/2023/03/PHOTO-2023-10-25-14-56-09-1-300x300.jpg', category: 'headkerchiefes', color: 'pink', branch: ['1', '2'] });
+    const headkerchief1 = new item({ name: 'Pink headkerchief', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2023/03/PHOTO-2023-10-25-14-56-09-1-300x300.jpg', category: 'headkerchiefes', color: 'pink', branch: ['1', '2'] });
     const headkerchief2 = new item({ name: 'Gray headkerchief', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2023/03/PHOTO-2023-10-25-14-56-07-300x300.jpg', category: 'headkerchiefes', color: 'gray', branch: ['1', '2'] });
     const headkerchief3 = new item({ name: 'Branded headkerchief', cost: '30', img: 'https://haine.co.il/wp-content/uploads/2021/04/00152-450x450.png', category: 'headkerchiefes', color: 'blue', branch: ['1', '2'] });
     const headkerchief4 = new item({ name: 'Dots headkerchief', cost: '28', img: 'https://haine.co.il/wp-content/uploads/2021/02/117-450x450.png', category: 'headkerchiefes', color: 'blue', branch: ['1', '2'] });

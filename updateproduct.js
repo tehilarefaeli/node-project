@@ -1,11 +1,11 @@
 function setValues() {
-    let productFromStorage = window.localStorage.getItem('product');
-    let productData = JSON.parse(productFromStorage);
-    document.getElementById('product_name').value = productData.name;
-    document.getElementById('product_cost').value = productData.cost;
-    document.getElementById('product_img').value = productData.img;
-    document.getElementById('product_category').value = productData.category;
-    document.getElementById('product_color').value = productData.color;
-    document.getElementById('product_branch').value = productData.branch;
-    document.getElementById('id').value = productData._id;
+    let itemFromStorage = window.localStorage.getItem('item');
+    let itemData = JSON.parse(itemFromStorage);
+    document.getElementById('item_name').value = itemData.name;
+    document.getElementById('item_cost').value = itemData.cost;
+    document.getElementById('item_img').value = itemData.img;
+    document.getElementById('item_category').value = itemData.category;
+    document.getElementById('item_color').value = itemData.color;
+    document.getElementById('item_branch').value = itemData.branch;
+    document.getElementById('id').value = itemData._id;
 }

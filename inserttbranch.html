@@ -1,0 +1,19 @@
+<script>
+    function add_branch() {
+        var city = document.getElementById("city").value;
+        var street = document.getElementById("street").value;
+        var phone = document.getElementById("phone").value;
+        var opening_hours = document.getElementById("opening_hours").value;
+        var email = document.getElementById("email").value;
+        fetch("/insertbranch", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ city: city, street: street, phone: phone, opening_hours: opening_hours, email: email })
+        }).then(console.log)
+        window.location.href = './shop.html';
+        return false
+    }
+
+</script>

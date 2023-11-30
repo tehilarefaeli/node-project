@@ -47,6 +47,42 @@ http_server.get('/items', async (req, res) => {
     }
 })
 
+http_server.get('/average', async (req, res) => {
+    try {
+        const result = await item.aggregate([
+            { $group: { _id: "$category", averagePrice: { $avg: "$cost" } } }
+        ]);
+        res.send(result);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+http_server.post('/insertbranch', (req, res) => {
+    add_branch_to_db(req.body)
+    res.end()
+})
+
+http_server.post('/updatebranch',async (req, res) => {
+    update_branch(req.body)
+    res.end()
+})
+http_server.post('/deletebranch',async (req, res) => {
+    delete_branch(req.body)
+    res.end()
+})
+
+http_server.post('/deleteitem',async (req, res) => {
+    delete_item(req.body)
+    res.end()
+})
+http_server.post('/updateitem',async (req, res) => {
+    update_item(req.body)
+    res.end()
+})
+
+
 http_server.listen(8080)
 
 mongoose.connect('mongodb://127.0.0.1:27017/shop', { useUnifiedTopology: true });
@@ -147,4 +183,32 @@ init();
 
 async function getbranches() {
     return await branch.find();
+}
+
+function add_branch_to_db(data) {
+    const name = new branch({ city: data.city, street: data.street, phone: data.phone, opening_hours: data.opening_hours, email: data.email, branch: data.branch });
+    name.save()
+}
+
+async function update_branch(data) {
+    const  id  = data.id;
+    //let result =await branch.findByIdAndRemove(id);
+    const name = new branch({ city: data.city, street: data.street, phone: data.phone, opening_hours: data.opening_hours, email: data.email, branch: data.branch });
+    name.save()
+}
+async function delete_branch(data) {
+    const  id  = data.id;
+   // let result =await branch.findByIdAndRemove(id);
+}
+
+async function delete_item(data){
+    const  id  = data.id;
+    let result =await item.findByIdAndRemove(id);
+}
+
+async function update_item(data) {
+    const  id  = data.id;
+    let result = await item.findByIdAndRemove(id);
+    const name = new item({ name: data.name, cost: data.cost, img: data.img, category: data.category, color: data.color, branch: data.branch });
+    name.save()
 }

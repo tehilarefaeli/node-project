@@ -333,6 +333,7 @@ function get_avarage() {
 }
 
 function deleteBranch(event) {
+    console.log("deleteee",event);
     fetch("/deletebranch", {
         method: "post",
         headers: {

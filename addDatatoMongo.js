@@ -82,6 +82,10 @@ http_server.post('/updateitem',async (req, res) => {
     res.end()
 })
 
+http_server.post('/insertitem', (req, res) => {
+    add_item_to_db(req.body)
+    res.end()
+})
 
 http_server.listen(8080)
 
@@ -128,11 +132,11 @@ async function init() {
         branc2.save()
     }
 
-    const kippah1 = new item({ name: 'Elegant Kippah', cost: '27', img: 'https://haine.co.il/wp-content/uploads/2021/01/IMG_7021-2-scaled-scaled.jpg', category: 'Kippahs', color: 'silver', branch: ['1', '2'] });
-    const kippah2 = new item({ name: 'Car Kippah', cost: '22', img: 'https://haine.co.il/wp-content/uploads/2022/08/PHOTO-2022-07-31-14-51-39-3.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
-    const kippah3 = new item({ name: 'Leather Kippah', cost: '28', img: 'https://haine.co.il/wp-content/uploads/2021/08/a115.png', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
-    const kippah4 = new item({ name: 'Lego Kippah', cost: '35', img: 'https://haine.co.il/wp-content/uploads/2022/07/20220727_122356-scaled.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
-    const kippah5 = new item({ name: 'Bicycle Kippah', cost: '40', img: 'https://haine.co.il/wp-content/uploads/2023/03/IMG-20230312-WA0051.jpg', category: 'Kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah1 = new item({ name: 'Elegant Kippah', cost: '27', img: 'https://haine.co.il/wp-content/uploads/2021/01/IMG_7021-2-scaled-scaled.jpg', category: 'kippahs', color: 'silver', branch: ['1', '2'] });
+    const kippah2 = new item({ name: 'Car Kippah', cost: '22', img: 'https://haine.co.il/wp-content/uploads/2022/08/PHOTO-2022-07-31-14-51-39-3.jpg', category: 'kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah3 = new item({ name: 'Leather Kippah', cost: '28', img: 'https://haine.co.il/wp-content/uploads/2021/08/a115.png', category: 'kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah4 = new item({ name: 'Lego Kippah', cost: '35', img: 'https://haine.co.il/wp-content/uploads/2022/07/20220727_122356-scaled.jpg', category: 'kippahs', color: 'blue', branch: ['1', '2'] });
+    const kippah5 = new item({ name: 'Bicycle Kippah', cost: '40', img: 'https://haine.co.il/wp-content/uploads/2023/03/IMG-20230312-WA0051.jpg', category: 'kippahs', color: 'blue', branch: ['1', '2'] });
     kippah1.save()
     kippah2.save()
     kippah3.save()
@@ -166,11 +170,11 @@ async function init() {
     bow5.save()
 
 
-    const sock1 = new item({ name: 'Boy disney socks', cost: '20', img: 'https://haine.co.il/wp-content/uploads/2023/08/PHOTO-2023-08-31-12-50-16-1-450x450.jpg', category: 'Socks', color: 'blue', branch: ['1', '2'] });
-    const sock2 = new item({ name: 'Girl disney socks', cost: '20', img: 'https://haine.co.il/wp-content/uploads/2023/08/PHOTO-2023-08-31-12-50-19-450x450.jpg', category: 'Socks', color: 'pink', branch: ['1', '2'] });
-    const sock3 = new item({ name: 'Gray knit socks', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2022/11/PHOTO-2023-11-13-13-28-29-1-300x300.jpg', category: 'Socks', color: 'gray', branch: ['1', '2'] });
-    const sock4 = new item({ name: 'white knit socks', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2023/11/PHOTO-2023-11-13-10-33-21-1-300x300.jpg', category: 'Socks', color: 'white', branch: ['1', '2'] });
-    const sock5 = new item({ name: 'Elegant socks', cost: '27', img: 'https://haine.co.il/wp-content/uploads/2023/03/PHOTO-2023-03-16-12-38-08-20-450x450.jpg', category: 'Socks', color: 'black', branch: ['1', '2'] });
+    const sock1 = new item({ name: 'Boy disney socks', cost: '20', img: 'https://haine.co.il/wp-content/uploads/2023/08/PHOTO-2023-08-31-12-50-16-1-450x450.jpg', category: 'socks', color: 'blue', branch: ['1', '2'] });
+    const sock2 = new item({ name: 'Girl disney socks', cost: '20', img: 'https://haine.co.il/wp-content/uploads/2023/08/PHOTO-2023-08-31-12-50-19-450x450.jpg', category: 'socks', color: 'pink', branch: ['1', '2'] });
+    const sock3 = new item({ name: 'Gray knit socks', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2022/11/PHOTO-2023-11-13-13-28-29-1-300x300.jpg', category: 'socks', color: 'gray', branch: ['1', '2'] });
+    const sock4 = new item({ name: 'white knit socks', cost: '25', img: 'https://haine.co.il/wp-content/uploads/2023/11/PHOTO-2023-11-13-10-33-21-1-300x300.jpg', category: 'socks', color: 'white', branch: ['1', '2'] });
+    const sock5 = new item({ name: 'Elegant socks', cost: '27', img: 'https://haine.co.il/wp-content/uploads/2023/03/PHOTO-2023-03-16-12-38-08-20-450x450.jpg', category: 'socks', color: 'black', branch: ['1', '2'] });
     sock1.save()
     sock2.save()
     sock3.save()
@@ -192,13 +196,13 @@ function add_branch_to_db(data) {
 
 async function update_branch(data) {
     const  id  = data.id;
-    //let result =await branch.findByIdAndRemove(id);
+    let result =await branch.findByIdAndRemove(id);
     const name = new branch({ city: data.city, street: data.street, phone: data.phone, opening_hours: data.opening_hours, email: data.email, branch: data.branch });
     name.save()
 }
 async function delete_branch(data) {
     const  id  = data.id;
-   // let result =await branch.findByIdAndRemove(id);
+    let result =await branch.findByIdAndRemove(id);
 }
 
 async function delete_item(data){
@@ -209,6 +213,11 @@ async function delete_item(data){
 async function update_item(data) {
     const  id  = data.id;
     let result = await item.findByIdAndRemove(id);
+    const name = new item({ name: data.name, cost: data.cost, img: data.img, category: data.category, color: data.color, branch: data.branch });
+    name.save()
+}
+
+function add_item_to_db(data) {
     const name = new item({ name: data.name, cost: data.cost, img: data.img, category: data.category, color: data.color, branch: data.branch });
     name.save()
 }

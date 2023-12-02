@@ -39,7 +39,7 @@
 
 <script>
     function update_items() {
-        var name = document.getElementById("name").value;
+        var name = document.getElementById("item_name").value;
         var cost = document.getElementById("item_cost").value;
         var img = document.getElementById("item_img").value;
         var category = document.getElementById("item_category").value;
@@ -52,7 +52,7 @@
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id: id, name: name, cost: cost, img: img, category: category, color: color, branc: branc })
+            body: JSON.stringify({ id: id, name: item_name, cost: cost, img: img, category: category, color: color, branc: branc })
         }).then(console.log)
         window.location.href = './shop.html';
         return false

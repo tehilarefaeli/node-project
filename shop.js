@@ -84,10 +84,10 @@ let filterproductbt3parametersbra
 
 function filering(kind) {
 
-    if (kind === 'all')
+    if (kind == 'all')
         productdatafilter = productdata;
     else
-        productdatafilter = productdata.filter(object => object.category === kind);
+        productdatafilter = productdata.filter(object => object.category == kind);
     loadProducts()
 }
 function displayInputs() {
@@ -361,9 +361,9 @@ function updateBranch(event) {
     window.location.href = './updateBranch.html';
 }
 
-function updateproduct(event) {
+function updateitem(event) {
     window.localStorage.setItem('product', JSON.stringify(event));
-    window.location.href = './updateproduct.html';
+    window.location.href = './updateitem.html';
 }
 
 async function get_product() {
@@ -394,7 +394,7 @@ async function get_product() {
             updateButton.innerHTML = "Update";
             card.appendChild(updateButton);
             updateButton.addEventListener('click', function () {
-                updateproduct(item);
+                updateitem(item);
             }, false);
             let deleteButton = document.createElement("button");
             deleteButton.innerHTML = "Delete";

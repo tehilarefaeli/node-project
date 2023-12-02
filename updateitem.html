@@ -47,12 +47,12 @@
         var branc = document.getElementById("item_branch").value;
         var id = document.getElementById("id").value;
 
-        fetch("/updatejewerly", {
+        fetch("/updateitem", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id: id, name: item_name, cost: cost, img: img, category: category, color: color, branc: branc })
+            body: JSON.stringify({ id: id, name: name, cost: cost, img: img, category: category, color: color, branc: branc })
         }).then(console.log)
         window.location.href = './shop.html';
         return false
@@ -61,7 +61,7 @@
 </script>
 
 </html>
-<script src="./updateitems.js"></script>
+<script src="./updateitem.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>

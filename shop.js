@@ -362,7 +362,7 @@ function updateBranch(event) {
 }
 
 function updateitem(event) {
-    window.localStorage.setItem('product', JSON.stringify(event));
+    window.localStorage.setItem('item', JSON.stringify(event));
     window.location.href = './updateitem.html';
 }
 

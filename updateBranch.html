@@ -11,7 +11,7 @@
 
 </head>
 
-<body  onload="setValues()">
+<body onload="setValues()">
     <label class="input-group-text" for="city">city</label>
     <input class="form-control" type="text" placeholder="city" id="city" name="city">
     <label class="input-group-text" for="street">street</label>
@@ -36,13 +36,13 @@
         var phone = document.getElementById("phone").value;
         var opening_hours = document.getElementById("opening_hours").value;
         var email = document.getElementById("email").value;
-        var id=document.getElementById("id").value;
+        var id = document.getElementById("id").value;
         fetch("/updatebranch", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({id:id, city: city, street: street, phone: phone, opening_hours: opening_hours, email: email })
+            body: JSON.stringify({ id: id, city: city, street: street, phone: phone, opening_hours: opening_hours, email: email })
         }).then(console.log)
         window.location.href = './shop.html';
         return false

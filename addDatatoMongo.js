@@ -196,23 +196,23 @@ function add_branch_to_db(data) {
 
 async function update_branch(data) {
     const  id  = data.id;
-    let result =await branch.findByIdAndRemove(id);
+    let result =await branch.findByIdAndDelete(id);
     const name = new branch({ city: data.city, street: data.street, phone: data.phone, opening_hours: data.opening_hours, email: data.email, branch: data.branch });
     name.save()
 }
 async function delete_branch(data) {
     const  id  = data.id;
-    let result =await branch.findByIdAndRemove(id);
+    let result =await branch.findByIdAndDelete(id);
 }
 
 async function delete_item(data){
     const  id  = data.id;
-    let result =await item.findByIdAndRemove(id);
+    let result =await item.findByIdAndDelete(id);
 }
 
 async function update_item(data) {
     const  id  = data.id;
-    let result = await item.findByIdAndRemove(id);
+    let result = await item.findByIdAndDelete(id);
     const name = new item({ name: data.name, cost: data.cost, img: data.img, category: data.category, color: data.color, branch: data.branch });
     name.save()
 }

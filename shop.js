@@ -345,8 +345,8 @@ function deleteBranch(event) {
     return false
 }
 
-function deleteJewerly(event) {
-    fetch("/deletejewerly", {
+function deleteItem(event) {
+    fetch("/deleteitem", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -369,7 +369,6 @@ function updateitem(event) {
 async function get_product() {
     fetch("/items").then(res => res.json()).then(items => {
         productdata = items
-        console.log('rfghjaaaaaaaaaaaaa', productdata)
         items.forEach(item => {
             const card = document.createElement("div");
             card.classList.add("card");
@@ -400,7 +399,7 @@ async function get_product() {
             deleteButton.innerHTML = "Delete";
             card.appendChild(deleteButton);
             deleteButton.addEventListener('click', function () {
-                deleteJewerly(item);
+                deleteItem(item);
             }, false);
             document.getElementById("divsOfProducts").appendChild(card);
         })

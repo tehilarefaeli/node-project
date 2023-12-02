@@ -366,7 +366,7 @@ function updateproduct(event) {
 }
 
 async function get_product() {
-    fetch("/product").then(res => res.json()).then(items => {
+    fetch("/items").then(res => res.json()).then(items => {
         productdata = items
         console.log('rfghjaaaaaaaaaaaaa', productdata)
         items.forEach(item => {

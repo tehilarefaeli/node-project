@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+    <label class="input-group-text" for="name">name</label>
+    <input class="form-control" type="text" placeholder="name" id="item_name" name="name">
+
+    <label class="input-group-text" for="cost">cost</label>
+    <input class="form-control" type="number" placeholder="cost" id="item_cost" name="cost">
+
+    <label class="input-group-text" for="img">img</label>
+    <input class="form-control" type="string" placeholder="img" id="item_img" name="img">
+
+    <label class="input-group-text" for="category">category</label>
+    <input class="form-control" type="text" placeholder="category" id="item_category" name="category">
+
+    <label class="input-group-text" for="color">color</label>
+    <input class="form-control" type="string" placeholder="color" id="item_color" name="color">
+
+    <label class="input-group-text" for="branch">branch</label>
+    <input class="form-control" type="text" placeholder="branch" id="item_branch" name="branc">
+
+
+    <button type="button" class="btn btn-primary btn-sm" onclick="add_item()">add</button>
+
+
+</body>
+
+<script>
+    function add_item() {
+        var name = document.getElementById("item_name").value;
+        var cost = document.getElementById("item_img").value;
+        var img = document.getElementById("item_img").value;
+        var category = document.getElementById("item_category").value;
+        var color = document.getElementById("item_color").value;
+        var branc = document.getElementById("item_branch").value;
+        fetch("/insertitems", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name: name, cost: cost, img: img, category: category, color: color, branc: branc })
+        }).then(console.log)
+        return false
+    }
+
+</script>
+
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
